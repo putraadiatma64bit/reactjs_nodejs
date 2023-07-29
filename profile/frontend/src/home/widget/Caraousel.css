@@ -1,0 +1,4 @@
+.carousel-image {
+  height: 300px; /* Ganti 300px dengan tinggi yang Anda inginkan dalam piksel */
+  object-fit: cover; /* Atur bagaimana gambar akan masuk ke dalam wadahnya */
+}
