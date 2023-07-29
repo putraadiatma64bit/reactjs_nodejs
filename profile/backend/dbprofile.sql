@@ -41,6 +41,34 @@ INSERT INTO `cat` VALUES (1,'artikel',1),(2,'berita',1),(3,'olahraga',1);
 UNLOCK TABLES;
 
 --
+-- Table structure for table `guest`
+--
+
+DROP TABLE IF EXISTS `guest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `guest` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) DEFAULT NULL,
+  `title` varchar(45) DEFAULT NULL,
+  `content` varchar(100) DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `guest`
+--
+
+LOCK TABLES `guest` WRITE;
+/*!40000 ALTER TABLE `guest` DISABLE KEYS */;
+INSERT INTO `guest` VALUES (1,'asd@asd.com','test1','asdasdasd',NULL,NULL),(2,'dfg@asd.com','asd','asdasd',NULL,NULL),(3,'qwe@asd.com','qwe','qwe',NULL,NULL),(4,'jkl@asd.com','asd','asd',NULL,NULL);
+/*!40000 ALTER TABLE `guest` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `page`
 --
 
@@ -86,7 +114,7 @@ CREATE TABLE `post` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -95,8 +123,36 @@ CREATE TABLE `post` (
 
 LOCK TABLES `post` WRITE;
 /*!40000 ALTER TABLE `post` DISABLE KEYS */;
-INSERT INTO `post` VALUES (1,1,'title',NULL,'content',1,NULL,NULL),(2,3,'title2','photo-1690362289796-682480928.png','content27',1,NULL,'2023-07-26 09:04:49'),(4,1,'haloo1','photo-1690357284477-144277875.png','asd',1,'2023-07-26 07:40:18','2023-07-26 08:03:12');
+INSERT INTO `post` VALUES (1,1,'title','photo-1690513598490-457827762.png','content',1,NULL,NULL),(2,3,'title2','photo-1690513598490-457827762.png','content27',1,NULL,'2023-07-26 09:04:49'),(4,1,'haloo1','photo-1690513598490-457827762.png','asd',1,'2023-07-26 07:40:18','2023-07-26 08:03:12'),(5,1,'asdsd','photo-1690513598490-457827762.png','asdasd',1,'2023-07-28 03:00:02','2023-07-28 03:00:02'),(6,1,'asdsd','photo-1690513598490-457827762.png','asdasd',1,'2023-07-28 03:00:16','2023-07-28 03:00:16'),(7,1,'aaaaaa','photo-1690513598490-457827762.png','asdasd',1,'2023-07-28 03:01:07','2023-07-28 03:01:07'),(10,2,'mytitle','photo-1690513598490-457827762.png','haloha',1,'2023-07-28 03:06:38','2023-07-28 03:06:38');
 /*!40000 ALTER TABLE `post` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `slide`
+--
+
+DROP TABLE IF EXISTS `slide`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `slide` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(45) DEFAULT NULL,
+  `photo` varchar(100) DEFAULT NULL,
+  `users` int(11) DEFAULT NULL,
+  `createdAt` datetime DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `slide`
+--
+
+LOCK TABLES `slide` WRITE;
+/*!40000 ALTER TABLE `slide` DISABLE KEYS */;
+INSERT INTO `slide` VALUES (1,'asd','photo-1690595460012-370857389.jpg',1,NULL,'2023-07-29 01:51:00'),(2,'baru','photo-1690596491599-441820511.jpg',1,'2023-07-29 02:08:11','2023-07-29 02:11:41');
+/*!40000 ALTER TABLE `slide` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -114,7 +170,7 @@ CREATE TABLE `users` (
   `createdAt` datetime DEFAULT NULL,
   `updatedAt` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -123,7 +179,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'admin','$2b$10$PPbPRv8iEegO4DYY4I0USunrSfiLrIkA/H6Sdmw11KTLUGry2HVs2','page, post, cat','2023-07-20 10:27:32','2023-07-20 10:27:32');
+INSERT INTO `users` VALUES (1,'admin','$2b$10$LRt9sTd52BmzVMKLPr9VVuEoqB8yJFDQWJ5mRqgethDkbW8smyCS6','page, post, cat, profile, users, slide, guest','2023-07-27 15:20:44','2023-07-27 15:20:44'),(2,'dian','$2b$10$OPckviZ9eljIDwkFfhyeV.pLQnAhIX39lEjFnyCIpx0WlU/EsH96.','users,page','2023-07-28 09:09:01','2023-07-28 09:09:01');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -136,4 +192,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-07-27 18:53:21
+-- Dump completed on 2023-07-29 17:52:32
